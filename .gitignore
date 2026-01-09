@@ -1,33 +1,63 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
-build
-src_link
+
+# Python ignorables
+logs/
 __pycache__/
-python_venv
-src_link
-.lastlogin
-gen
-.DS_Store
-site/
-linux_binder_idl/
-/.vs/hal/FileContentIndex
-/.vs/hal/v17
-/.vs
-/.history
-*/h
-*/cpp
-**/x64
-**/aidl
-/audiodecoder/docs/html
-/audiodecoder/docs/latex
-.*sw*
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib64/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
 
-# CMake related files
-CMakeCache.txt
-CMakeFiles/
-cmake_install.cmake
-Makefile
+pip-log.txt
+pip-delete-this-directory.txt
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+venv/
+.env
+.env.*
 
-# Compiled aidl output per module
-*/gen/
+# Ignore all directories containing pyvenv.cfg
+**/pyvenv.cfg
+**/*/pyvenv.cfg
+
+# Node.js ignorables
+node_modules/
+npm-debug.log
+yarn-error.log
+.pnp/
+.pnp.js
+.env
+.env.test
+.cache/
+.next/
+.nuxt/
+.vuepress/dist
+.serverless/
+.fusebox/
+.dynamodb/
+.file_activity_report.json
+*.db
+core.*
+.core
+*.log
+post_process_status.lock
