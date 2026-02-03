@@ -39,3 +39,8 @@ urllib3==2.3.0
 verspec==0.1.0
 watchdog==6.0.0
 zipp==3.23.0
+
+# PPTX artifact generator dependencies (kavia-docs/scripts/generate_tevdevice_avbuffer_triggering_policy_pptx.py)
+python-pptx==1.0.2
+CairoSVG==2.8.2
+Pillow==10.2.0
