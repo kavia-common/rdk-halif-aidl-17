@@ -30,6 +30,26 @@ repo_url: https://github.com/rdkcentral/rdk-halif-aidl
 
 nav:
   - Home: index.md
+  - kavia-docs:
+      - Overview: ../kavia-docs/index.md
+      - Decoder:
+          - Audio Decoder AIDL API and FFmpeg Plan: ../kavia-docs/decoder/audiodecoder-current-aidl-api-and-ffmpeg-plan.md
+          - Pipeline Components: ../kavia-docs/decoder/decoder-pipeline-components.md
+          - Pipeline Control Flow: ../kavia-docs/decoder/decoder-pipeline-control-flow.md
+          - Pipeline Data Flow: ../kavia-docs/decoder/decoder-pipeline-data-flow.md
+          - Pipeline Sequence: ../kavia-docs/decoder/decoder-pipeline-sequence.md
+          - Buffer Lifecycle: ../kavia-docs/decoder/decoder-pipeline-buffer-lifecycle.md
+      - AV Buffer:
+          - AVBuffer Design (TEVDevice/src): ../kavia-docs/avbuffer/AVBuffer.md
+          - AVBuffer Design (Current Reference): ../kavia-docs/avbuffer/avbuffer.md
+          - AVBuffer Design Doc (Renamed Pointer): ../kavia-docs/avbuffer/AVBuffer_designdoc.md
+          - AVBuffer Manager Design: ../kavia-docs/avbuffer/avbuffer-manager-design.md
+          - AVBuffer Manager PDF Export Notes: ../kavia-docs/avbuffer/avbuffer-manager-design.pdf.md
+          - Reference Code Flow (Client): ../kavia-docs/avbuffer/avbuffer-reference-code-flow-client-perspective.md
+          - Worked Example SVG Wrapper: ../kavia-docs/avbuffer/avbuffer-worked-example-annotated.svg.md
+          - Triggering Policy Outline: ../kavia-docs/avbuffer/tevdevice-avbuffer-triggering-policy-ppt-outline.md
+          - vDevice AVBuffer Design: ../kavia-docs/avbuffer/vDevice_AVBuffer.md
+          - vDevice AVBuffer PDF Export Notes: ../kavia-docs/avbuffer/vDevice_AVBuffer.pdf.md
   - The Software Stack: introduction/the_software_stack.md
   - Hardware Abstraction Layer:
     - Introduction: introduction/aidl_and_binder.md
