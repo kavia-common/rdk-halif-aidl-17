@@ -7,6 +7,7 @@ cmake_minimum_required(VERSION 3.16)
 project(VideoDecoderClassDesignStub LANGUAGES CXX)
 
 add_library(videodecoder_classdesign_stub
+    src/AVBufferAdapter.cpp
     src/VideoDecoder.cpp
     src/VideoDecoderController.cpp
     src/VideoDecoderManager.cpp

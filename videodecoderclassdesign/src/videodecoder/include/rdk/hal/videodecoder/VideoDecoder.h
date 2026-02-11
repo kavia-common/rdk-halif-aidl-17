@@ -7,6 +7,7 @@
 
 #pragma once
 
+#include "rdk/hal/videodecoder/AVBufferAdapter.h"
 #include "rdk/hal/videodecoder/VideoDecoderController.h"
 #include "rdk/hal/videodecoder/listeners.h"
 #include "rdk/hal/videodecoder/types.h"
