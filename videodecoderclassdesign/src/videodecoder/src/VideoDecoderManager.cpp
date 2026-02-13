@@ -7,19 +7,7 @@ VideoDecoderManager::VideoDecoderManager() = default;
 VideoDecoderManager::~VideoDecoderManager() = default;
 
 // PUBLIC_INTERFACE
-std::vector<VideoDecoderId> VideoDecoderManager::getVideoDecoderIds() const
-{
-    std::lock_guard<std::mutex> lock(m_mutex);
-
-    // Stub initialization is lazy but safe.
-    // const method: we don't mutate in this stub; real implementation might cache.
-    std::vector<VideoDecoderId> ids{};
-    ids.push_back(VideoDecoderId{0});
-    return ids;
-}
-
-// PUBLIC_INTERFACE
-void VideoDecoderManager::getVideoDecoderId(std::vector<VideoDecoderId*>& outIds)
+void VideoDecoderManager::getVideoDecoderIds(std::vector<VideoDecoderId*>& outIds)
 {
     std::lock_guard<std::mutex> lock(m_mutex);
 

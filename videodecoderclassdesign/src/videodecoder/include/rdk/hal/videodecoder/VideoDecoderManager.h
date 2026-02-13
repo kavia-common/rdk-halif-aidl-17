@@ -35,11 +35,7 @@ public:
     VideoDecoderManager& operator=(const VideoDecoderManager&) = delete;
 
     // PUBLIC_INTERFACE
-    std::vector<VideoDecoderId> getVideoDecoderIds() const;
-    /** AIDL: getVideoDecoderIds() */
-
-    // PUBLIC_INTERFACE
-    void getVideoDecoderId(std::vector<VideoDecoderId*>& outIds);
+    void getVideoDecoderIds(std::vector<VideoDecoderId*>& outIds);
     /**
      * Fill the caller-provided vector with pointers to newly allocated VideoDecoderId objects.
      *
