@@ -40,13 +40,15 @@ std::shared_ptr<VideoDecoder> VideoDecoderManager::getVideoDecoder(const VideoDe
 
     ensureInitializedLocked();
 
-    auto it = m_decoders.find(videoDecoderId.value);
-    if (it == m_decoders.end())
+    for (const auto& [id, decoder] : m_videoDecoders)
     {
-        return nullptr;
+        if (id.value == videoDecoderId.value)
+        {
+            return decoder;
+        }
     }
 
-    return it->second;
+    return nullptr;
 }
 
 void VideoDecoderManager::ensureInitializedLocked()
@@ -57,8 +59,11 @@ void VideoDecoderManager::ensureInitializedLocked()
     }
 
     // Stub: create a single decoder instance with id=0.
-    VideoDecoderId id0{0};
-    m_decoders.emplace(id0.value, std::make_shared<VideoDecoder>(id0));
+    const VideoDecoderId id0{0};
+
+    // Store (id, decoder) adjacent so callers can easily pass around ids/pointers together.
+    m_videoDecoders.emplace_back(id0, std::make_shared<VideoDecoder>(id0));
+
     m_supportedModes = {OperationalMode::NON_TUNNELLED};
 
     m_initialized = true;
