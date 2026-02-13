@@ -12,7 +12,7 @@
 
 #include <memory>
 #include <mutex>
-#include <unordered_map>
+#include <utility>
 #include <vector>
 
 namespace rdk::hal::videodecoder
@@ -39,6 +39,22 @@ public:
     /** AIDL: getVideoDecoderIds() */
 
     // PUBLIC_INTERFACE
+    void getVideoDecoderId(std::vector<VideoDecoderId*>& outIds);
+    /**
+     * Fill the caller-provided vector with pointers to newly allocated VideoDecoderId objects.
+     *
+     * Thread-safety:
+     * - This method takes the manager mutex.
+     * - It performs lazy initialization under the same lock via ensureInitializedLocked().
+     *
+     * Ownership:
+     * - The caller owns the allocated VideoDecoderId objects and must delete them.
+     *
+     * This API is intended to match environments where the caller provides storage for
+     * multiple decoder IDs via pointers.
+     */
+
+    // PUBLIC_INTERFACE
     std::vector<OperationalMode> getSupportedOperationalModes() const;
     /** AIDL: getSupportedOperationalModes() */
 
@@ -49,11 +65,13 @@ public:
 private:
     void ensureInitializedLocked();
 
+    using DecoderEntry = std::pair<VideoDecoderId, std::shared_ptr<VideoDecoder>>;
+
     mutable std::mutex m_mutex{};
     bool m_initialized{false};
 
     std::vector<OperationalMode> m_supportedModes{};
-    std::unordered_map<int32_t, std::shared_ptr<VideoDecoder>> m_decoders{};
+    std::vector<DecoderEntry> m_videoDecoders{};
 };
 
 } // namespace rdk::hal::videodecoder

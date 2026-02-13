@@ -19,6 +19,25 @@ std::vector<VideoDecoderId> VideoDecoderManager::getVideoDecoderIds() const
 }
 
 // PUBLIC_INTERFACE
+void VideoDecoderManager::getVideoDecoderId(std::vector<VideoDecoderId*>& outIds)
+{
+    std::lock_guard<std::mutex> lock(m_mutex);
+
+    // Needed: this method must reflect actual decoder availability, which in this stub is
+    // created lazily inside ensureInitializedLocked(). Without this call, we'd risk returning
+    // an empty list even though the manager can provide decoders.
+    ensureInitializedLocked();
+
+    // Push IDs for every known decoder. We allocate new VideoDecoderId objects because the
+    // API contract uses pointer storage. Caller owns the allocations.
+    for (const auto& [id, decoder] : m_videoDecoders)
+    {
+        (void)decoder; // id list enumeration does not require decoder object access.
+        outIds.push_back(new VideoDecoderId{id});
+    }
+}
+
+// PUBLIC_INTERFACE
 std::vector<OperationalMode> VideoDecoderManager::getSupportedOperationalModes() const
 {
     std::lock_guard<std::mutex> lock(m_mutex);
