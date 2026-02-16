@@ -1,6 +1,8 @@
 #include "rdk/hal/videodecoder/VideoDecoder.h"
 
+#include <array>
 #include <cstdint>
+#include <vector>
 
 namespace rdk::hal::videodecoder
 {
@@ -27,34 +29,44 @@ Capabilities buildStaticCapabilities()
     // queries performed once at init time.
     caps.supportsSecure = false;
 
-    // Per-codec capability entries. Profile/Level are left UNKNOWN in this stub
-    // (the AIDL enums exist, but this repository's standalone stub does not
-    // define full sets yet).
-    CodecCapabilities avc{};
-    avc.codec = Codec::AVC;
-    avc.profile = CodecProfile::UNKNOWN;
-    avc.level = CodecLevel::UNKNOWN;
-    avc.maxFrameRate = 60;
-    avc.maxFrameWidth = 3840;
-    avc.maxFrameHeight = 2160;
+    // Per-codec capability entries.
+    //
+    // IMPORTANT: Keep this stable across calls. Populate once here and return a
+    // static instance from getCapabilities().
+    //
+    // This refactor avoids repeating near-identical blocks for each codec by
+    // iterating a small list and applying common defaults in the loop.
+    constexpr int32_t kDefaultMaxFrameRate = 60;
+    constexpr int32_t kDefaultMaxFrameWidth = 3840;
+    constexpr int32_t kDefaultMaxFrameHeight = 2160;
 
-    CodecCapabilities hevc{};
-    hevc.codec = Codec::HEVC;
-    hevc.profile = CodecProfile::UNKNOWN;
-    hevc.level = CodecLevel::UNKNOWN;
-    hevc.maxFrameRate = 60;
-    hevc.maxFrameWidth = 3840;
-    hevc.maxFrameHeight = 2160;
+    // Codecs supported by this stub implementation. Extend as needed.
+    constexpr std::array<Codec, 3> kSupportedCodecs = {Codec::AVC, Codec::HEVC, Codec::AV1};
 
-    CodecCapabilities av1{};
-    av1.codec = Codec::AV1;
-    av1.profile = CodecProfile::UNKNOWN;
-    av1.level = CodecLevel::UNKNOWN;
-    av1.maxFrameRate = 60;
-    av1.maxFrameWidth = 3840;
-    av1.maxFrameHeight = 2160;
+    std::vector<CodecCapabilities> codecCaps;
+    codecCaps.reserve(kSupportedCodecs.size());
 
-    caps.supportedCodecs = {avc, hevc, av1};
+    for (const Codec codec : kSupportedCodecs)
+    {
+        CodecCapabilities cc{};
+        cc.codec = codec;
+
+        // Profile/Level are left UNKNOWN in this stub (the AIDL enums exist, but
+        // this repository's standalone stub does not define full sets yet).
+        cc.profile = CodecProfile::UNKNOWN;
+        cc.level = CodecLevel::UNKNOWN;
+
+        // Default decode limits (representative values).
+        // If some codecs require different limits, adjust within this loop using
+        // a small codec->values mapping/switch (still avoiding repeated blocks).
+        cc.maxFrameRate = kDefaultMaxFrameRate;
+        cc.maxFrameWidth = kDefaultMaxFrameWidth;
+        cc.maxFrameHeight = kDefaultMaxFrameHeight;
+
+        codecCaps.push_back(cc);
+    }
+
+    caps.supportedCodecs = std::move(codecCaps);
 
     // Dynamic range support (representative defaults).
     // If the platform supports additional ranges (e.g., Dolby Vision), extend
