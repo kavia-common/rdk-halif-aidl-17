@@ -1,6 +1,6 @@
 #include "rdk/hal/videodecoder/VideoDecoder.h"
 
-#include <mutex>
+#include <cstdint>
 
 namespace rdk::hal::videodecoder
 {
@@ -17,19 +17,49 @@ Capabilities buildStaticCapabilities()
 {
     Capabilities caps{};
 
-    // Repo mapping note:
-    // - AIDL Capabilities parcelable fields are:
-    //     CodecCapabilities[] supportedCodecs;
-    //     DynamicRange[] supportedDynamicRanges;
-    //     boolean supportsSecure;
+    // AIDL Capabilities fields:
+    //   CodecCapabilities[] supportedCodecs;
+    //   DynamicRange[] supportedDynamicRanges;
+    //   boolean supportsSecure;
     //
-    // This repo's current C++ "class design" stub Capabilities (types.h) is
-    // different and only models supported codecs + operational modes.
-    //
-    // Therefore, we map the AIDL concept to the closest existing C++ types in
-    // this repository (Codec + OperationalMode).
-    caps.supportedCodecs = {Codec::AVC, Codec::HEVC, Codec::AV1};
-    caps.supportedModes = {OperationalMode::NON_TUNNELLED};
+    // Populate with a stable, representative set for this stub implementation.
+    // When integrating with a real backend, replace these literals with platform
+    // queries performed once at init time.
+    caps.supportsSecure = false;
+
+    // Per-codec capability entries. Profile/Level are left UNKNOWN in this stub
+    // (the AIDL enums exist, but this repository's standalone stub does not
+    // define full sets yet).
+    CodecCapabilities avc{};
+    avc.codec = Codec::AVC;
+    avc.profile = CodecProfile::UNKNOWN;
+    avc.level = CodecLevel::UNKNOWN;
+    avc.maxFrameRate = 60;
+    avc.maxFrameWidth = 3840;
+    avc.maxFrameHeight = 2160;
+
+    CodecCapabilities hevc{};
+    hevc.codec = Codec::HEVC;
+    hevc.profile = CodecProfile::UNKNOWN;
+    hevc.level = CodecLevel::UNKNOWN;
+    hevc.maxFrameRate = 60;
+    hevc.maxFrameWidth = 3840;
+    hevc.maxFrameHeight = 2160;
+
+    CodecCapabilities av1{};
+    av1.codec = Codec::AV1;
+    av1.profile = CodecProfile::UNKNOWN;
+    av1.level = CodecLevel::UNKNOWN;
+    av1.maxFrameRate = 60;
+    av1.maxFrameWidth = 3840;
+    av1.maxFrameHeight = 2160;
+
+    caps.supportedCodecs = {avc, hevc, av1};
+
+    // Dynamic range support (representative defaults).
+    // If the platform supports additional ranges (e.g., Dolby Vision), extend
+    // this list accordingly.
+    caps.supportedDynamicRanges = {DynamicRange::SDR, DynamicRange::HDR10, DynamicRange::HLG};
 
     return caps;
 }

@@ -105,12 +105,76 @@ struct PropertyKVPair
 };
 
 /**
+ * Minimal stand-in for `com.rdk.hal.videodecoder.CodecProfile`.
+ *
+ * NOTE: This is a stub. Real values must match the AIDL enum when using
+ * generated headers.
+ */
+enum class CodecProfile
+{
+    UNKNOWN = 0
+};
+
+/**
+ * Minimal stand-in for `com.rdk.hal.videodecoder.CodecLevel`.
+ *
+ * NOTE: This is a stub. Real values must match the AIDL enum when using
+ * generated headers.
+ */
+enum class CodecLevel
+{
+    UNKNOWN = 0
+};
+
+/**
+ * Minimal stand-in for `com.rdk.hal.videodecoder.DynamicRange`.
+ *
+ * NOTE: This is a stub. Real values must match the AIDL enum when using
+ * generated headers.
+ */
+enum class DynamicRange
+{
+    SDR = 0,
+    HDR10 = 1,
+    HLG = 2,
+    DOLBY_VISION = 3,
+    UNKNOWN = 255
+};
+
+/**
+ * Minimal stand-in for `com.rdk.hal.videodecoder.CodecCapabilities`.
+ *
+ * This mirrors the AIDL parcelable fields:
+ *   Codec codec;
+ *   CodecProfile profile;
+ *   CodecLevel level;
+ *   int maxFrameRate;
+ *   int maxFrameWidth;
+ *   int maxFrameHeight;
+ */
+struct CodecCapabilities
+{
+    Codec codec{Codec::UNKNOWN};
+    CodecProfile profile{CodecProfile::UNKNOWN};
+    CodecLevel level{CodecLevel::UNKNOWN};
+    int32_t maxFrameRate{0};
+    int32_t maxFrameWidth{0};
+    int32_t maxFrameHeight{0};
+};
+
+/**
  * Minimal stand-in for `com.rdk.hal.videodecoder.Capabilities`.
+ *
+ * This mirrors the AIDL parcelable fields:
+ *   CodecCapabilities[] supportedCodecs;
+ *   DynamicRange[] supportedDynamicRanges;
+ *   boolean supportsSecure;
  */
 struct Capabilities
 {
-    std::vector<Codec> supportedCodecs;
-    std::vector<OperationalMode> supportedModes;
+    std::vector<CodecCapabilities> supportedCodecs;
+    std::vector<DynamicRange> supportedDynamicRanges;
+    bool supportsSecure{false};
 };
 
 /**
