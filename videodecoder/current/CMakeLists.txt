@@ -55,8 +55,6 @@ set(SRC
 	${SRC_DIR}/Property.aidl
 	${SRC_DIR}/PropertyKVPair.aidl
 	${SRC_DIR}/ScanType.aidl
-
-	# Common AIDL types used by the module interfaces
 	${COMMON_SRC_DIR}/PropertyValue.aidl
 	${COMMON_SRC_DIR}/AVSource.aidl
 	${COMMON_SRC_DIR}/HALError.aidl
