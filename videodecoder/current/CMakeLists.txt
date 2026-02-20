@@ -31,9 +31,9 @@ endif()
 
 # version of other modules that `videodecoder` depends on
 set(COMMON_VERSION "current")
+set(COMMON_SRC_DIR ${COMMON_MODULE_PATH}/${COMMON_VERSION}/com/rdk/hal)
 
 set(SRC_DIR com/rdk/hal/videodecoder)
-set(COMMON_SRC_DIR ${COMMON_MODULE_PATH}/${COMMON_VERSION}/com/rdk/hal)
 
 set(SRC
 	${SRC_DIR}/Capabilities.aidl
@@ -55,6 +55,8 @@ set(SRC
 	${SRC_DIR}/Property.aidl
 	${SRC_DIR}/PropertyKVPair.aidl
 	${SRC_DIR}/ScanType.aidl
+
+	# Common AIDL types used by the module interfaces
 	${COMMON_SRC_DIR}/PropertyValue.aidl
 	${COMMON_SRC_DIR}/AVSource.aidl
 	${COMMON_SRC_DIR}/HALError.aidl
