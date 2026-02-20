@@ -58,6 +58,7 @@ set(SRC
 	${COMMON_SRC_DIR}/PropertyValue.aidl
 	${COMMON_SRC_DIR}/AVSource.aidl
 	${COMMON_SRC_DIR}/State.aidl
+	${COMMON_SRC_DIR}/HALError.aidl
 )
 
 set(INCLUDE_DIRECTORY
