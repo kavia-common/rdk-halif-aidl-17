@@ -1,0 +1,187 @@
+<!--
+MongoDB Document Metadata:
+- Original File Path: kavia-docs/CodeWiki/Quality/Other/tevdevice-static-analysis-summary-report.html
+- Operation: write
+- Timestamp: 2026-02-18T13:01:47.198718+00:00
+- Restored At: 2026-02-23T05:04:11.252612+00:00
+- Task ID: cm219d4578
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TEVDevice Static Analysis (SA) Summary Report</title>
+  <style>
+    :root {
+      --text: #111827;
+      --muted: #374151;
+      --bg: #ffffff;
+      --border: #e5e7eb;
+      --code-bg: #f6f8fa;
+      --code-border: #d0d7de;
+      --link: #1d4ed8;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      line-height: 1.55;
+    }
+
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 32px 20px;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.25;
+      margin: 0 0 12px 0;
+    }
+
+    h1 {
+      font-size: 2rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      margin-top: 26px;
+    }
+
+    p {
+      margin: 0 0 12px 0;
+      color: var(--text);
+    }
+
+    ul, ol {
+      margin: 0 0 12px 24px;
+      padding: 0;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    code, pre {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.95em;
+    }
+
+    code {
+      background: var(--code-bg);
+      border: 1px solid var(--code-border);
+      border-radius: 6px;
+      padding: 1px 6px;
+    }
+
+    pre {
+      background: var(--code-bg);
+      border: 1px solid var(--code-border);
+      border-radius: 8px;
+      padding: 12px 14px;
+      overflow: auto;
+      margin: 0 0 12px 0;
+    }
+
+    pre code {
+      background: transparent;
+      border: 0;
+      padding: 0;
+    }
+
+    .note {
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>TEVDevice Static Analysis (SA) Summary Report</h1>
+
+    <h2>Scope</h2>
+    <p>
+      This report summarizes the static analysis (SA) issues that were previously raised during this session for the TEVDevice repository,
+      the corrective actions that were applied and later merged, and the current SA status based on the latest available cppcheck output
+      in the repository.
+    </p>
+    <p>
+      The TEVDevice code in this workspace is an AVBuffer-focused CMake C++ project that builds an AVBuffer Binder service and associated
+      helper libraries, along with unit tests.
+    </p>
+
+    <h2>Static analysis tooling and evidence</h2>
+    <p>The current SA status in this repository is represented by the checked-in cppcheck XML report:</p>
+    <ul>
+      <li>Tool: cppcheck 2.13.0</li>
+      <li>Evidence file: <code>cppcheck-report.xml</code></li>
+    </ul>
+    <p>The repository also contains a CMake build and a build wrapper script (<code>build.sh</code>) used to generate required dependencies and compile the project.</p>
+
+    <h2>Previously reported SA issue categories (from this session)</h2>
+    <p>
+      During earlier SA review in this session, the issues that were reported fell into common cppcheck/C++ static-analysis categories
+      in the AVBuffer service and helper code areas. The key categories reported were:
+    </p>
+    <ol>
+      <li>Resource lifetime and cleanup concerns, especially around heap/pool buffer management paths where early returns could bypass cleanup.</li>
+      <li>Null/invalid pointer safety and defensive checks for inputs and returned handles in service/manager code paths.</li>
+      <li>Initialization and safe defaulting, where some variables/fields required explicit initialization to satisfy static analysis and to avoid undefined behavior risks.</li>
+      <li>Robustness and error-handling clarity, where some error paths required clearer handling to avoid ambiguous states being flagged by analysis.</li>
+    </ol>
+    <p>These categories were raised against the AVBuffer implementation files and supporting utilities.</p>
+
+    <h2>Fixes applied and merged</h2>
+    <p>
+      The changes that were implemented and then merged addressed the categories above by focusing on correctness, safety, and clarity
+      in the AVBuffer implementation. In general, the applied fixes consisted of:
+    </p>
+    <ol>
+      <li>Strengthening resource management by ensuring consistent cleanup and avoiding paths that could leak or leave objects in an inconsistent state on error.</li>
+      <li>Adding or tightening guard checks and validation on pointer/handle usage to reduce null/invalid access risk.</li>
+      <li>Ensuring variables and internal state are initialized deterministically so that static analysis no longer flags “may be uninitialized” style concerns.</li>
+      <li>Improving error-path handling so that control flow is clearer and more robust, which reduces false positives and improves maintainability.</li>
+    </ol>
+
+    <h2>Current static analysis status (post-merge)</h2>
+    <p>Based on the current <code>cppcheck-report.xml</code> in the repository, the cppcheck run shows no errors:</p>
+    <ul>
+      <li><span style="background-color: #d4edda; color: #155724; padding: 2px 6px; border-radius: 4px;">The &lt;errors&gt; section in cppcheck-report.xml is empty.</span></li>
+    </ul>
+    <p>This indicates that, at the time this report was generated and for the configuration that produced the checked-in report, cppcheck is clean with respect to reported findings.</p>
+
+    <h2>How to re-validate locally (recommended)</h2>
+    <p>To reproduce the build context before running SA, the repository provides a build script that prepares dependencies and builds the project:</p>
+    <ul>
+      <li><code>./build.sh Target=linux</code></li>
+    </ul>
+    <p>
+      After building, cppcheck can be run against the source tree (exact invocation may vary by environment). The authoritative current status
+      for this report is the checked-in <code>cppcheck-report.xml</code>.
+    </p>
+
+    <h2>Notes and limitations</h2>
+    <p class="note">
+      This report reflects the SA results as captured in the repository’s current <code>cppcheck-report.xml</code>. If cppcheck configuration,
+      suppressions, include paths, or build-generated headers change, the result may differ. The report is intended to be a concise post-merge
+      summary rather than a full tool configuration specification.
+    </p>
+  </main>
+</body>
+</html>
