@@ -6593,3 +6593,443 @@
 2026-03-03 10:09:27,405 - Knowledge - INFO - ⚡ Total Redis path: 0.89s (vs ~300s from disk)
 2026-03-03 10:09:27,611 - Knowledge - INFO - Saving knowledge to Redis...
 2026-03-03 10:09:27,891 - Knowledge - INFO - Knowledge saved to Redis successfully
+2026-03-03 10:10:18,268 - Knowledge - INFO - Created shared MongoDB connection pool
+2026-03-03 10:10:18,647 - Knowledge - INFO - Starting Knowledge Graph processing with 20 threads
+2026-03-03 10:10:18,821 - Knowledge - INFO - Initial configuration: chunk_size=65536, max_cache_size=500
+2026-03-03 10:10:19,024 - Knowledge - INFO - Knowledge Graph concurrency configuration: workers=20, max_batch_size=10, max_concurrent_llm_calls=50
+2026-03-03 10:10:20,405 - Knowledge - INFO - 🔍 _load_persisted_knowledge called - checking for Redis optimization
+2026-03-03 10:10:20,600 - Knowledge - WARNING - ❌ load_from_redis method not found - Redis support not attached
+2026-03-03 10:10:20,780 - Knowledge - INFO - load persisted knowledge: begin
+2026-03-03 10:10:20,995 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:21,194 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:21,430 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/sensor/current/com/rdk/hal/sensor/thermal/CMakeLists.txt
+2026-03-03 10:10:21,613 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:21,809 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:22,017 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/standards/direct_branching.md
+2026-03-03 10:10:22,241 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:22,434 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:22,679 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/cdm/readme.md
+2026-03-03 10:10:22,908 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:23,117 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:23,327 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/avbuffer/current/CMakeLists.txt
+2026-03-03 10:10:23,545 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:23,724 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:23,919 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/planecontrol/current/CMakeLists.txt
+2026-03-03 10:10:24,138 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:24,326 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:24,564 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/introduction/the_software_stack.md
+2026-03-03 10:10:24,785 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:24,997 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:25,241 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/halif/key_concepts/hal/hal_session_state_management.md
+2026-03-03 10:10:25,489 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:25,699 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:25,888 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/whitepapers/branching_strategies.md
+2026-03-03 10:10:26,116 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:26,315 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:26,491 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/standards/rdk_central_signup.md
+2026-03-03 10:10:26,695 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:26,853 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:27,038 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/vsi/filesystem/current/file_system_architecture.md
+2026-03-03 10:10:27,272 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:27,462 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:27,631 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/sensor/current/com/rdk/hal/sensor/motion/hfp-sensor-motion.yaml
+2026-03-03 10:10:27,849 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:28,056 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:28,231 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/introduction/interface_generation.md
+2026-03-03 10:10:28,423 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:28,605 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:28,933 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/sensor/current/com/rdk/hal/sensor/CMakeLists.txt
+2026-03-03 10:10:29,141 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:29,348 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:29,593 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/vsi/filesystem/current/directory_and_dynamic_linking_specification.md
+2026-03-03 10:10:29,802 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:30,003 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:30,222 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/whitepapers/client_usage_of_stable_aidl.md
+2026-03-03 10:10:30,450 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:30,644 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:30,857 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/hdmicec/current/CMakeLists.txt
+2026-03-03 10:10:31,042 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:31,268 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:31,490 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/scripts/sync_src.sh
+2026-03-03 10:10:31,683 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:31,842 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:32,035 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/videodecoder/current/CMakeLists.txt
+2026-03-03 10:10:32,240 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:32,403 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:32,884 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/indicator/current/CMakeLists.txt
+2026-03-03 10:10:33,095 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:33,264 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:33,449 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/halif/key_concepts/hal/hal_interfaces.md
+2026-03-03 10:10:33,652 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:33,873 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:34,047 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/version.txt
+2026-03-03 10:10:34,223 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:34,419 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:34,636 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/cdm/hal_utils/hal_logger.cpp
+2026-03-03 10:10:34,861 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:35,048 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:35,218 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/compositeinput/current/CMakeLists.txt
+2026-03-03 10:10:35,403 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:35,600 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:35,838 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/hdmioutput/current/CMakeLists.txt
+2026-03-03 10:10:36,033 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:36,194 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:36,391 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/broadcast/current/CMakeLists.txt
+2026-03-03 10:10:36,578 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:36,756 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:36,949 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/cdm/hal_utils/hal_utils.h
+2026-03-03 10:10:37,127 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:37,325 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:37,514 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/standards/git_flow_branching_strategy.md
+2026-03-03 10:10:37,748 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:37,939 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:38,096 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/sensor/current/com/rdk/hal/sensor/thermal/hfp-sensor-thermal.yaml
+2026-03-03 10:10:38,329 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:38,514 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:38,712 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/whitepapers/engineering_goals.md
+2026-03-03 10:10:38,918 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:39,106 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:39,305 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/avclock/current/CMakeLists.txt
+2026-03-03 10:10:39,463 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:39,650 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:39,847 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/cdm/drm_playready_hal/module.cpp
+2026-03-03 10:10:40,049 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:40,263 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:40,442 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/requirements.txt
+2026-03-03 10:10:40,698 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:40,909 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:41,077 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/cdm/drm_widevine_hal/drm_widevine_platform.h
+2026-03-03 10:10:41,263 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:41,444 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:41,631 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/cdm/drm_widevine_hal/module.cpp
+2026-03-03 10:10:41,799 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:41,963 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:42,118 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/cdm/drm_playready_hal/drm_playready_platform.h
+2026-03-03 10:10:42,352 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:42,540 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:42,714 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/governance/rdk-engineering-validation-framework.md
+2026-03-03 10:10:42,952 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:43,151 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:43,343 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/references/references.md
+2026-03-03 10:10:43,534 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:43,769 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:44,005 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/whitepapers/standardizing_git_commit_messages.md
+2026-03-03 10:10:44,210 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:44,426 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:44,609 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/audiosink/current/CMakeLists.txt
+2026-03-03 10:10:44,781 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:44,939 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:45,146 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/standards/interface_template.md
+2026-03-03 10:10:45,368 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:45,555 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:45,759 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/whitepapers/interface_version_alignment.md
+2026-03-03 10:10:45,956 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:46,176 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:46,372 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/deepsleep/current/CMakeLists.txt
+2026-03-03 10:10:46,573 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:46,803 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:47,043 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/CMakeLists.txt
+2026-03-03 10:10:47,240 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:47,419 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:47,617 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/governance/rdk-release-documenation-structure.md
+2026-03-03 10:10:47,833 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:48,061 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:48,219 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/standards/forked_based_branching.md
+2026-03-03 10:10:48,428 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:48,644 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:48,853 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/halif/video_sink/current/video_sink.md
+2026-03-03 10:10:49,040 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:49,264 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:49,472 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/mkdocs.yml
+2026-03-03 10:10:49,683 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:49,870 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:50,061 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/halif/device_info/current/device_info.md
+2026-03-03 10:10:50,286 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:50,474 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:50,695 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/cdm/hal_utils/hal_logger.h
+2026-03-03 10:10:50,905 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:51,079 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:51,292 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/standards/semantic_versioning.md
+2026-03-03 10:10:51,488 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:51,696 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:51,889 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/hdmiinput/current/hfp-hdmiinput.yaml
+2026-03-03 10:10:52,109 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:52,272 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:52,468 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/hdmiinput/current/CMakeLists.txt
+2026-03-03 10:10:52,675 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:52,862 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:53,058 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/halif/broadcast/current/broadcast.md
+2026-03-03 10:10:53,219 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:53,425 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:53,598 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/halif/sensor/current/motion/motion_sensor.md
+2026-03-03 10:10:53,788 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:53,989 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:54,202 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/vsi/filesystem/current/logging_system.md
+2026-03-03 10:10:54,383 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:54,635 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:54,862 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/avbuffer/current/avbufferhelper.h
+2026-03-03 10:10:55,057 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:55,233 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:55,410 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/sensor/current/com/rdk/hal/sensor/motion/CMakeLists.txt
+2026-03-03 10:10:55,586 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:55,774 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:55,955 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/build_docs.sh
+2026-03-03 10:10:56,115 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:56,310 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:56,499 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/halif/audio_decoder/current/audio_decoder.md
+2026-03-03 10:10:56,661 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:56,873 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:57,047 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/javascript/mermaid-init.js
+2026-03-03 10:10:57,221 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:57,424 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:57,649 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/introduction/documentation_getting_started.md
+2026-03-03 10:10:57,851 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:58,034 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:58,271 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/boot/current/hfp-boot.yaml
+2026-03-03 10:10:58,514 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:58,735 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:58,916 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/halif/indicator/current/indicator.md
+2026-03-03 10:10:59,098 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:59,277 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:10:59,466 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/whitepapers/documentation_in_git.md
+2026-03-03 10:10:59,659 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:10:59,852 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:00,029 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/vsi/bluetooth/current/bluetooth.md
+2026-03-03 10:11:00,218 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:00,454 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:00,666 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/cdm/drm_playready_hal/drm_playready_hal.c
+2026-03-03 10:11:00,839 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:01,027 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:01,202 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/cdm/drm_widevine_hal/drm_widevine_platform.cpp
+2026-03-03 10:11:01,392 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:01,583 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:01,768 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/halif/key_concepts/hal/hal_properties.md
+2026-03-03 10:11:01,985 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:02,157 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:02,357 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/vsi/filesystem/current/halif_logging_system_design.md
+2026-03-03 10:11:02,552 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:02,759 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:02,975 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/videosink/current/hfp-videosink.yaml
+2026-03-03 10:11:03,170 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:03,359 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:03,562 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/deviceinfo/current/hfp-deviceinfo.yaml
+2026-03-03 10:11:03,729 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:03,935 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:04,147 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/README.md
+2026-03-03 10:11:04,304 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:04,474 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:04,656 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/flash/current/CMakeLists.txt
+2026-03-03 10:11:04,835 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:05,011 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:05,171 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/halif/hdmi_input/current/hdmi_input.md
+2026-03-03 10:11:05,343 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:05,525 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:05,706 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/audiodecoder/current/hfp-audiodecoder.yaml
+2026-03-03 10:11:05,922 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:06,143 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:06,368 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/panel/current/hfp-panel.yaml
+2026-03-03 10:11:06,591 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:06,749 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:06,920 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/halif/audio_mixer/current/intro.md
+2026-03-03 10:11:07,160 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:07,335 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:07,539 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/cdm/hal_utils/hal_utils.cpp
+2026-03-03 10:11:07,796 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:08,006 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:08,189 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/halif/common/current/common.md
+2026-03-03 10:11:08,412 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:08,590 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:08,763 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/avclock/current/hfp-avclock.yaml
+2026-03-03 10:11:08,930 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:09,117 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:09,301 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/cdm/hfp-cdm.yaml
+2026-03-03 10:11:09,531 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:09,759 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:09,933 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/broadcast/current/hfp-broadcast.yaml
+2026-03-03 10:11:10,200 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:10,387 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:10,619 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/halif/boot/current/boot.md
+2026-03-03 10:11:10,818 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:11,000 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:11,239 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/halif/video_decoder/current/video_decoder.md
+2026-03-03 10:11:11,457 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:11,614 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:11,797 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/halif/hdmi_cec/current/hdmi_cec.md
+2026-03-03 10:11:11,962 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:12,169 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:12,377 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/whitepapers/doxygen_code_documentation.md
+2026-03-03 10:11:12,558 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:12,762 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:12,941 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/install_binder.sh
+2026-03-03 10:11:13,136 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:13,365 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:13,585 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/halif/sec_api/current/sec_api.md
+2026-03-03 10:11:13,812 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:13,985 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:14,192 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/halif/cdm/current/cdm.md
+2026-03-03 10:11:14,385 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:14,574 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:14,786 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/hdmioutput/current/hfp-hdmioutput.yaml
+2026-03-03 10:11:15,004 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:15,197 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:15,362 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/boot/current/CMakeLists.txt
+2026-03-03 10:11:15,554 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:15,728 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:15,900 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/compositeinput/current/hfp-compositeinput.yaml
+2026-03-03 10:11:16,075 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:16,283 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:16,487 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/halif/plane_control/current/plane_control.md
+2026-03-03 10:11:16,675 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:16,855 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:17,023 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/copilot-instructions.md
+2026-03-03 10:11:17,258 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:17,442 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:17,625 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/halif/av_buffer/current/av_buffer.md
+2026-03-03 10:11:17,831 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:18,018 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:18,233 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/CMakeModules/CompileAidl.cmake
+2026-03-03 10:11:18,457 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:18,648 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:18,833 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/vsi/graphics/current/graphics.md
+2026-03-03 10:11:19,057 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:19,238 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:19,449 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/halif/panel/current/panel.md
+2026-03-03 10:11:19,662 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:19,841 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:20,029 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/deviceinfo/current/CMakeLists.txt
+2026-03-03 10:11:20,208 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:20,388 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:20,568 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/scripts/build_interfaces.sh
+2026-03-03 10:11:20,738 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:20,906 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:21,089 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/audiosink/current/hfp-audiosink.yaml
+2026-03-03 10:11:21,260 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:21,498 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:21,692 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/scripts/rewrite_wiki_links.py
+2026-03-03 10:11:21,871 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:22,085 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:22,295 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/vsi/kernel/current/kernel.md
+2026-03-03 10:11:22,488 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:22,666 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:22,872 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/videosink/current/CMakeLists.txt
+2026-03-03 10:11:23,038 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:23,234 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:23,452 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/deepsleep/current/hfp-deepsleep.yaml
+2026-03-03 10:11:23,681 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:23,860 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:24,057 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/introduction/build_binder_tools.md
+2026-03-03 10:11:24,247 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:24,450 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:24,629 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/vsi/systemd/current/systemd.md
+2026-03-03 10:11:24,803 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:24,996 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:25,206 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/audiodecoder/current/CMakeLists.txt
+2026-03-03 10:11:25,404 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:25,617 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:25,791 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/halif/key_concepts/hal/hal_feature_profiles.md
+2026-03-03 10:11:25,989 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:26,187 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:26,348 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/CHANGELOG.md
+2026-03-03 10:11:26,552 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:26,756 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:26,991 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/introduction/aidl_and_binder.md
+2026-03-03 10:11:27,163 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:27,377 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:27,582 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/videodecoder/current/hfp-videodecoder.yaml
+2026-03-03 10:11:27,774 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:28,002 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:28,189 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/halif/key_concepts/hal/hal_naming_conventions.md
+2026-03-03 10:11:28,400 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:28,582 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:28,772 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/halif/audio_sink/current/audio_sink.md
+2026-03-03 10:11:28,977 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:29,161 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:29,331 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/vsi/wifi/current/wifi.md
+2026-03-03 10:11:29,513 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:29,725 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:29,911 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/halif/flash/current/flash.md
+2026-03-03 10:11:30,099 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:30,286 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:30,473 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/halif/sensor/current/thermal/thermal_sensor.md
+2026-03-03 10:11:30,685 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:30,859 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:31,058 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/vsi/linux_input/current/linux_input.md
+2026-03-03 10:11:31,226 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:31,403 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:31,597 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/CONTRIBUTING.md
+2026-03-03 10:11:31,802 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:32,011 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:32,222 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/halif/deep_sleep/current/deep_sleep.md
+2026-03-03 10:11:32,421 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:32,665 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:32,841 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/indicator/current/hfp-indicator.yaml
+2026-03-03 10:11:33,089 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:33,339 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:33,520 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/scripts/activate_venv.sh
+2026-03-03 10:11:33,712 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:33,875 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:34,095 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/hdmicec/current/hfp-hdmicec.yaml
+2026-03-03 10:11:34,320 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:34,577 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:34,777 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/halif/audio_mixer/current/audio_mixer.md
+2026-03-03 10:11:34,949 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:35,161 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:35,381 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/halif/sensor/current/sensor.md
+2026-03-03 10:11:35,568 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:35,760 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:35,966 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/planecontrol/current/hfp-planecontrol.yaml
+2026-03-03 10:11:36,202 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:36,367 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:36,536 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/avbuffer/current/hfp-avbuffer.yaml
+2026-03-03 10:11:36,735 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:36,924 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:37,141 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/index.md
+2026-03-03 10:11:37,357 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:37,567 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:37,752 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/whitepapers/right_format_right_job.md
+2026-03-03 10:11:37,960 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:38,163 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:38,331 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/stylesheets/extra.css
+2026-03-03 10:11:38,510 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:38,684 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:38,841 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/halif/ffv/current/ffv.md
+2026-03-03 10:11:39,072 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:39,246 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:39,450 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/halif/composite_input/current/composite_input.md
+2026-03-03 10:11:39,702 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:39,868 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:40,052 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/CHANGELOG.md
+2026-03-03 10:11:40,257 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:40,470 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:40,662 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/halif/hdmi_output/current/hdmi_output.md
+2026-03-03 10:11:40,885 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:41,042 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:41,257 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/halif/av_clock/current/av_clock.md
+2026-03-03 10:11:41,490 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:41,701 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:41,912 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/scripts/install.sh
+2026-03-03 10:11:42,117 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:42,367 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:42,577 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/panel/current/CMakeLists.txt
+2026-03-03 10:11:42,769 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:42,980 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:43,183 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/vsi/service_manager/current/service_manager.md
+2026-03-03 10:11:43,373 - Knowledge - INFO - Found code-base-name: https://github.com/kavia-common/rdk-halif-aidl-17.git:kavia-develop-6801
+2026-03-03 10:11:43,572 - Knowledge - INFO - Found code_base: <app.utils.kg_build.knowledge.KnowledgeCodeBase object at 0x7f49f2d988d0>
+2026-03-03 10:11:43,744 - Knowledge - INFO - process ingested knowledge for /app/data/tevdevice9937/17/b8468m5/rdk-halif-aidl-17/docs/halif/audio_decoder/v0.5/audio_decoder.md
+2026-03-03 10:11:43,968 - Knowledge - INFO - Loaded 139 files from persisted knowledge
+2026-03-03 10:11:44,127 - Knowledge - INFO - load persisted knowledge: end
+2026-03-03 10:11:44,323 - Knowledge - INFO - Redis support added with prefix knowledge:b8468m5:
+2026-03-03 10:11:45,294 - Knowledge - INFO - Starting knowledge initialization for ID: 6tg7w1-b8468m5
+2026-03-03 10:11:45,555 - Knowledge - INFO - 🔍 Checking Redis for build_id: b8468m5
+2026-03-03 10:11:45,745 - Knowledge - INFO - 🔍 Full session ID: 6tg7w1-b8468m5
+2026-03-03 10:11:45,931 - Knowledge - INFO - 🔍 Redis prefix will be: knowledge:b8468m5:
+2026-03-03 10:11:46,113 - Knowledge - INFO - 🔍 Using attached load_from_redis() method
+2026-03-03 10:11:46,313 - Knowledge - INFO - 🔍 Attempting to load knowledge from Redis...
+2026-03-03 10:11:46,497 - Knowledge - INFO - 🔍 Using derived instance_id for Redis lookup: b8468m5
+2026-03-03 10:11:46,734 - Knowledge - INFO - ✅ Redis cache found! Loading knowledge...
+2026-03-03 10:11:46,933 - Knowledge - INFO - ✅ Successfully loaded from Redis: 139 files
+2026-03-03 10:11:47,110 - Knowledge - INFO - ✅ Redis load complete: 139 files in 1.00s
+2026-03-03 10:11:47,304 - Knowledge - INFO - ⚡ Total Redis path: 1.00s (vs ~300s from disk)
+2026-03-03 10:11:47,499 - Knowledge - INFO - Saving knowledge to Redis...
+2026-03-03 10:11:47,831 - Knowledge - INFO - Knowledge saved to Redis successfully
