@@ -111,6 +111,7 @@ nav:
     - Governance:
       - RDK Documentation Structure: governance/rdk-release-documenation-structure.md
       - RDK Engineering Validation Framework: governance/rdk-engineering-validation-framework.md
+      - HAL Delivery & Versioning SOP: governance/versioning-sop.md
     - White Papers:
       - Documentation in Git: whitepapers/documentation_in_git.md
       - Branching Strategies : whitepapers/branching_strategies.md
@@ -123,6 +124,7 @@ nav:
     - Filing an Issue: external_content/ut-core-wiki/1.2.-Standards:-Issue-Description-Guideline.md
     - FAQ:
       - Python Development: external_content/ut-core-wiki/FAQ:-Comparing-Python-Development-Platforms.md
+    - Release Notes 0.14.0: releases/0.14.0.md
     - ChangeLog: CHANGELOG.md
 
 markdown_extensions:
