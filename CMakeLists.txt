@@ -25,9 +25,23 @@ project(Hal
 	LANGUAGES NONE
 	VERSION 1.0)
 
+# Ensure CMake installs public headers into the staging/sysroot include tree.
+# This is required for environments where external binder/liblog headers
+# (e.g., <log/log_main.h>) expect <log/log.h> to exist and define LOG_PRI.
+include(GNUInstallDirs)
+
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/CMakeModules)
 
 include(CompileAidl)
+
+# Install compatibility/public headers shipped by this repository.
+# In particular, include/log/log.h provides LOG_PRI when building against
+# reduced header bundles that omit it.
+install(
+	DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+	FILES_MATCHING PATTERN "*.h"
+)
 
 if (DEFINED AIDL_BIN)
 	get_filename_component(AIDL_BIN ${AIDL_BIN} ABSOLUTE)
