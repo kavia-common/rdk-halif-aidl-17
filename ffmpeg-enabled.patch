@@ -1,0 +1,68 @@
+From 9b2f2b9a7f4b7a5c2b7a7d0d7f4a2c4f9a1b2c3d Mon Sep 17 00:00:00 2001
+From: TEVDevice Yocto Recipe Generator <noreply@example.com>
+Date: Mon, 30 Mar 2026 00:00:00 +0000
+Subject: [PATCH] cmake: link swscale/swresample when FFmpeg is enabled
+
+The VideoDecoder controller uses libswscale (SwsContext APIs) when FFmpeg
+support is enabled, but the CMake FFmpeg discovery only linked avcodec,
+avformat, and avutil. This can cause cross-build link failures in Yocto
+when swscale (and transitive dependencies such as swresample) are not
+explicitly linked as part of the FFmpeg interface target.
+
+Signed-off-by: TEVDevice Yocto Recipe Generator <noreply@example.com>
+---
+ CMakeLists.txt | 31 ++++++++++++++++++++++++-------
+ 1 file changed, 24 insertions(+), 7 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 1a2b3c4..5d6e7f8 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -185,15 +185,26 @@ if(VideoDecoder_ENABLE_FFMPEG)
+   endif()
+
+   # Limit dependency strictly to the required components.
+-  foreach(_comp avcodec avformat avutil)
++  # NOTE:
++  #  - swscale is required by the FFmpeg-based VideoDecoder implementation when
++  #    FFmpeg support is enabled (SwsContext APIs).
++  #  - some FFmpeg builds also require swresample to satisfy transitive codec
++  #    dependencies reliably across cross-build toolchains.
++  foreach(_comp avcodec avformat avutil swresample swscale)
+     string(TOUPPER "${_comp}" _COMP_UPPER)
+     find_library(FFMPEG_${_COMP_UPPER}_LIB
+       NAMES ${_comp} lib${_comp}
+       HINTS ${_ffmpeg_lib_hints}
+     )
+   endforeach()
+
+   set(_ffmpeg_all_libs_found TRUE)
+-  foreach(_req avcodec avformat avutil)
++  foreach(_req avcodec avformat avutil swresample swscale)
+     string(TOUPPER "${_req}" _REQ_UPPER)
+     if(NOT FFMPEG_${_REQ_UPPER}_LIB)
+       set(_ffmpeg_all_libs_found FALSE)
+@@ -209,11 +220,19 @@ if(VideoDecoder_ENABLE_FFMPEG)
+     add_library(VideoDecoder_ffmpeg INTERFACE)
+     target_include_directories(VideoDecoder_ffmpeg INTERFACE "${FFMPEG_INCLUDE_DIR}")
+     target_link_libraries(VideoDecoder_ffmpeg INTERFACE
+       "${FFMPEG_AVCODEC_LIB}"
+       "${FFMPEG_AVFORMAT_LIB}"
+       "${FFMPEG_AVUTIL_LIB}"
++      "${FFMPEG_SWRESAMPLE_LIB}"
++      "${FFMPEG_SWSCALE_LIB}"
+     )
+     target_compile_definitions(VideoDecoder_ffmpeg INTERFACE VideoDecoder_HAS_FFMPEG=1)
+     message(STATUS "FFmpeg found (staged/override).")
+     message(STATUS "  FFMPEG_INCLUDE_DIR=${FFMPEG_INCLUDE_DIR}")
+     message(STATUS "  FFMPEG_AVCODEC_LIB=${FFMPEG_AVCODEC_LIB}")
+     message(STATUS "  FFMPEG_AVFORMAT_LIB=${FFMPEG_AVFORMAT_LIB}")
+     message(STATUS "  FFMPEG_AVUTIL_LIB=${FFMPEG_AVUTIL_LIB}")
++    message(STATUS "  FFMPEG_SWRESAMPLE_LIB=${FFMPEG_SWRESAMPLE_LIB}")
++    message(STATUS "  FFMPEG_SWSCALE_LIB=${FFMPEG_SWSCALE_LIB}")
+   else()
+     message(STATUS
+       "FFmpeg not found (or incomplete); VideoDecoder_ffmpeg target not created. "
+       "To stage FFmpeg into build/usr, run ./build.sh with FFMPEG_ROOT=/home/richiesw/ffmpeg (or set -DFFMPEG_ROOT=...)."
+--
+2.43.0
