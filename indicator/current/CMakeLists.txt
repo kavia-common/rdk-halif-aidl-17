@@ -55,3 +55,10 @@ compile_aidl(${SRC}
 	INCLUDE_DIRECTORY ${INCLUDE_DIRECTORY}
 	${COMPILE_AIDL_ARGV}
 )
+
+# Optional: build a lightweight C++ client adapter for the generated interfaces.
+# This does not affect interface generation; it only provides a convenience library
+# when consumers build this repository with a full toolchain.
+if (EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/../client/CMakeLists.txt)
+	add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../client ${CMAKE_BINARY_DIR}/indicator_client)
+endif()
