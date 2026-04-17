@@ -1,0 +1,12 @@
+-- AIDL_TARGET set to indicator
+-- Setting AIDL_SRC_VERSION to `current`
+-- AIDL_SRC_VERSION set to current
+-- Setting AIDL_GEN_DIR to default [/home/kavia/workspace/code-generation/rdk-halif-aidl-17/gen/indicator/current]]
+-- AIDL_GEN_DIR set to /home/kavia/workspace/code-generation/rdk-halif-aidl-17/gen/indicator/current
+CMake Error at CMakeModules/CompileAidl.cmake:104 (message):
+  `aidl` not found
+Call Stack (most recent call first):
+  indicator/current/CMakeLists.txt:54 (compile_aidl)
+
+
+-- Configuring incomplete, errors occurred!
