@@ -31,3 +31,4 @@ Makefile
 
 # Compiled aidl output per module
 */gen/
+.file_activity_report.json
