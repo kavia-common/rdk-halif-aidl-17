@@ -24,11 +24,18 @@ import com.rdk.hal.videodecoder.ContentLightLevel;
 import com.rdk.hal.videodecoder.Colorimetry;
 import com.rdk.hal.PropertyValue;
 
-/** 
+/**
  *  @brief     Video Decoder Controller HAL interface.
  *  @author    Luc Kennedy-Lamb
  *  @author    Peter Stieglitz
  *  @author    Douglas Adler
+ *
+ *  <h3>Exception Handling</h3>
+ *  Unless otherwise specified, this interface follows standard Android Binder semantics:
+ *  - <b>Success</b>: The method returns `binder::Status::Exception::EX_NONE` and all output parameters/return values are valid.
+ *  - <b>Failure (Exception)</b>: The method returns a service-specific exception (e.g., `EX_SERVICE_SPECIFIC`, `EX_ILLEGAL_ARGUMENT`).
+ *    In this case, output parameters and return values contain undefined (garbage) memory and must not be used.
+ *    The caller must ignore any output variables.
  */
 
 @VintfStability
@@ -36,31 +43,31 @@ interface IVideoDecoderController
 {
     /**
      * Starts the Video Decoder.
-     * 
+     *
      * The Video Decoder must be in a `READY` state before it can be started.
      * If successful the Video Decoder transitions to a `STARTING` state and then a `STARTED` state.
      *
      * @exception binder::Status::Exception::EX_NONE for success
-     * @exception binder::Status::Exception::EX_ILLEGAL_STATE 
-     * 
+     * @exception binder::Status::Exception::EX_ILLEGAL_STATE
+     *
      * @pre The resource must be in State::READY.
-     * 
+     *
      * @see IVideoDecoder.open(), IVideoDecoder.stop()
      */
     void start();
- 
+
     /**
      * Stops the Video Decoder.
-     * 
+     *
      * The decoder enters the `STOPPING` state and then any input data buffers that have been passed for decode but have
      * not yet been decoded are automatically freed.  This is effectively the same as a flush.
      * Once buffers are freed and the internal Video Decoder state is reset, the decoder enters the `READY` state.
      *
      * @exception binder::Status::Exception::EX_NONE for success
-     * @exception binder::Status::Exception::EX_ILLEGAL_STATE 
-     * 
+     * @exception binder::Status::Exception::EX_ILLEGAL_STATE
+     *
      * @pre The resource must be in State::STARTED.
-     * 
+     *
      * @see start()
      */
     void stop();
@@ -77,86 +84,95 @@ interface IVideoDecoderController
      *
      * @exception binder::Status::Exception::EX_NONE for success.
      *
+     *
      * @see getProperty()
      */
     boolean setProperty(in Property property, in PropertyValue propertyValue);
 
     /**
      * Pass an encoded buffer of video elementary stream data to the Video Decoder.
-     * 
+     *
      * The Video Decoder must be in a `STARTED` state.
-     * Buffers can be either non-secure or secure to support SVP.
+     * Buffers can be either non-secure or secure to support SVP (Secure Video Path).
      * Each call shall reference a single video frame with a presentation timestamp.
-     * 
-     * Once the decoder has finished processing the buffer, it is automatically released
-     * and returned to the AV Buffer Manager. The caller must not modify or free the
-     * buffer after submission.
-     * 
+     *
+     * Buffer Ownership: Ownership of the buffer transfers to the Video Decoder HAL only
+     * when decodeBuffer() accepts the buffer (returns true). Once accepted, the HAL is
+     * responsible for freeing the buffer after processing. The caller must not modify or
+     * access the buffer after a successful call. If the call returns false or throws an
+     * exception, ownership remains with the caller.
+     *
      * @param[in] nsPresentationTime	The presentation time of the video frame in nanoseconds.
      * @param[in] bufferHandle			A handle to the AV buffer containing the encoded video frame.
-     * 
-     * @returns true on success or false if the decode buffer is full.
+     *
+     * @returns boolean
+     * @retval true   Buffer successfully queued for decoding. Buffer ownership transfers to HAL.
+     * @retval false  Internal decode buffer queue is full. Buffer ownership remains with caller.
+     *                The client SHOULD wait for `IVideoDecoderControllerListener.onDecodeBufferAvailable()`
+     *                before retrying, to avoid wasted binder transactions. Continuing to call this
+     *                method while the queue is full is permitted but will return `false` repeatedly
+     *                until space is available.
      *
      * @exception binder::Status::Exception::EX_NONE for success
      * @exception binder::Status::Exception::EX_ILLEGAL_STATE
      * @exception binder::Status::Exception::EX_ILLEGAL_ARGUMENT
-     * 
+     *
      * @pre The resource must be in State::STARTED.
      */
     boolean decodeBuffer(in long nsPresentationTime, in long bufferHandle);
 
     /**
      * Starts a flush operation on the decoder.
-     * 
+     *
      * The Video Decoder must be in a `STARTED` state.
      * Any input data buffers that have been passed for decode but have
      * not yet been decoded are automatically freed.
-     * 
+     *
      * Any pending decoded video frames due for callback are returned to the video frame buffer pool.
      * The internal Video Decoder state is optionally reset.
      *
      * @param[in] reset - When true, the internal Video Decoder state is fully reset back to its opened `READY` state.
      *
      * @exception binder::Status::Exception::EX_NONE for success
-     * @exception binder::Status::Exception::EX_ILLEGAL_STATE 
-     * 
+     * @exception binder::Status::Exception::EX_ILLEGAL_STATE
+     *
      * @pre The resource must be in State::STARTED.
      */
     void flush(in boolean reset);
 
     /**
      * Signals a discontinuity in the video stream.
-     * 
+     *
      * The Video Decoder must be in a state of `STARTED`.
      * Buffers that follow this call passed in `decodeBuffer()` shall be regarded
      * as PTS discontinuous to any video frames past or already held in the Video Decoder.
      *
      * @exception binder::Status::Exception::EX_NONE for success
-     * @exception binder::Status::Exception::EX_ILLEGAL_STATE 
-     * 
+     * @exception binder::Status::Exception::EX_ILLEGAL_STATE
+     *
      * @pre The resource must be in State::STARTED.
      */
     void signalDiscontinuity();
 
     /**
      * Signals an end of stream condition after the last AV buffer has been passed for decode.
-     * 
+     *
      * The Video Decoder must be in a state of `STARTED`.
      * Any frames held by the decoder should continue to be decoded and output.
-     * 
+     *
      * No more AV buffers are expected to be delivered to the Video Decoder after
      * `signalEOS()` has been called unless the decoder is first flushed or stopped and started again.
-     * 
+     *
      * An `IVideoDecoderControllerListener.onFrameOutput()` callback with `FrameMetadata.endOfStream`
      * must be set to true after all video frames have been output.
      *
      * @exception binder::Status::Exception::EX_NONE for success
-     * @exception binder::Status::Exception::EX_ILLEGAL_STATE 
-     * 
+     * @exception binder::Status::Exception::EX_ILLEGAL_STATE
+     *
      * @pre The resource must be in State::STARTED.
      */
     void signalEOS();
-    
+
     /**
     * Sends codec specific data to initialise the Video Decoder.
     *
@@ -194,6 +210,7 @@ interface IVideoDecoderController
     *
     * @exception binder::Status::Exception::EX_NONE for success
     * @exception binder::Status::Exception::EX_ILLEGAL_STATE if the resource is not in the `STARTED` state.
+     *
     *
     * @pre The resource must be in the `STARTED` state.
     */

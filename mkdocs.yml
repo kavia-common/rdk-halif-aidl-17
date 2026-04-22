@@ -38,6 +38,7 @@ nav:
       - HAL Feature Profiles: halif/key_concepts/hal/hal_feature_profiles.md
       - HAL Naming Conventions: halif/key_concepts/hal/hal_naming_conventions.md
       - HAL Session State Management: halif/key_concepts/hal/hal_session_state_management.md
+      - HAL API Deprecation Governance: halif/key_concepts/hal/hal_api_deprecation_governance.md
     - Standards:
       - Core Development Guide: standards/direct_branching.md
       - Fork-Based Contribution Guide: standards/forked_based_branching.md
@@ -109,7 +110,7 @@ nav:
       - Getting Started: introduction/documentation_getting_started.md
       - Interface Template: standards/interface_template.md
     - Governance:
-      - RDK Documentation Structure: governance/rdk-release-documenation-structure.md
+      - RDK Documentation Structure: governance/rdk-release-documentation-structure.md
       - RDK Engineering Validation Framework: governance/rdk-engineering-validation-framework.md
       - HAL Delivery & Versioning SOP: governance/versioning-sop.md
     - White Papers:

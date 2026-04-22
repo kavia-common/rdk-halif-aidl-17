@@ -291,7 +291,7 @@ Decoded video frame buffers are only passed from the video decoder to the client
 
 If the input [AV Buffer](../../av_buffer/current/av_buffer.md) that contained the coded video frame was passed in a secure buffer, then the corresponding decoded video frame must be output in a secure video frame buffer.
 
-Video frame buffers are passed back as handles in the `IVideoDecoderControllerListener.onFrameOutput()` function `frameBufferHandle` parameter.  If no frame buffer handle is available to pass but the call needs to be made to provide updated FrameMetadata then `-1` shall be passed as the handle value.
+Video frame buffers are passed back as handles in the `IVideoDecoderControllerListener.onFrameOutput()` function `frameBufferHandle` parameter.  In tunnelled mode, `-1` is passed as the handle value to indicate that no frame buffer handle is being provided since the video is consumed internally by the vendor layer.
 
 The format of the data in the decoded video frame buffer is determined by the vendor driver implementation and does not need to be understood by the RDK middleware.
 
@@ -300,6 +300,14 @@ The frame buffer handle is later passed to the Video Sink for queuing before pre
 The vendor layer is expected to manage the pool of decoded frame buffers privately and report its size in the `OUTPUT_FRAME_POOL_SIZE` property.
 
 If the frame buffer pool is empty then the video decoder cannot output the next decoded frame until a new frame buffer becomes available.  While frame output is blocked, it is reasonable for the video decoder service to either buffer additional coded input buffers or to reject new calls to `decodeBuffer()` with a false return value.
+
+## Input Buffer Back-Pressure
+
+`IVideoDecoderController.decodeBuffer()` returns `false` when the internal decode buffer queue is full. Buffer ownership remains with the caller and the buffer must be retained for re-submission.
+
+To avoid wasted binder transactions, the client SHOULD wait for `IVideoDecoderControllerListener.onDecodeBufferAvailable()` before calling `decodeBuffer()` again. The callback fires exactly once per back-pressure episode: when the internal queue transitions from full to has-space. If the client continues to call `decodeBuffer()` during back-pressure (receiving `false` repeatedly), only one callback is delivered per transition. It is not fired in steady-state operation.
+
+Continuing to call `decodeBuffer()` while the queue is full is permitted but will return `false` repeatedly until space is available.
 
 ## Presentation Time for Video Frames
 

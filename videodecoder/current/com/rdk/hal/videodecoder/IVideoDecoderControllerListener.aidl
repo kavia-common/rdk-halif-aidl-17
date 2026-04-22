@@ -19,27 +19,35 @@
 package com.rdk.hal.videodecoder;
 import com.rdk.hal.videodecoder.FrameMetadata;
 
-/** 
+/**
  *  @brief     Controller callbacks listener interface from video decoder.
  *  @author    Luc Kennedy-Lamb
  *  @author    Peter Stieglitz
  *  @author    Douglas Adler
  */
- 
+
 @VintfStability
 oneway interface IVideoDecoderControllerListener {
- 
+
     /**
 	 * Callback when a full video frame has been decoded or the frame metadata needs to be notified.
      * The metadata must be non-null on the first frame after start() or flush() call or
-     * when the metadata changes in the stream. 
+     * when the metadata changes in the stream.
      * It can only be null if the contents have not changed since the last callback.
      *
+     * Ownership semantics for `frameAVBufferHandle`:
+     * - The client receives ownership of the AVBuffer handle when this callback is invoked.
+     * - The client is responsible for managing the handle's lifecycle: either passing it to the next
+     *   module (e.g., video sink) or explicitly freeing it via IAVBuffer.free() when no longer needed.
+     *
      * @param[in] nsPresentationTime	The presentation time or -1 if only metadata is being returned.
-     * @param[in] frameBufferHandle		Handle to 2D frame buffer or -1 if no handle is delivered in tunnelled mode.
+     * @param[in] frameAVBufferHandle	AVBuffer handle to the decoded 2D video frame buffer. Valid handle in
+     *                                   non-tunnelled mode; -1 in tunnelled mode.
      * @param[in] metadata				A FrameMetadata parcelable of metadata related to the frame.
+     *
+     * @see IVideoDecoderController.decodeBuffer(), IAVBuffer.free()
      */
-    void onFrameOutput(in long nsPresentationTime, in long frameBufferHandle, in @nullable FrameMetadata metadata);
+    void onFrameOutput(in long nsPresentationTime, in long frameAVBufferHandle, in @nullable FrameMetadata metadata);
 
     /**
     * Callback which delivers the picture user data from a frame.
@@ -62,4 +70,24 @@ oneway interface IVideoDecoderControllerListener {
     * @param[in] userData            Array of bytes containing the SEI user data (e.g., ATSC A/72 caption payload).
     */
     void onUserDataOutput(in long nsPresentationTime, in byte[] userData);
-    }
+
+    /**
+     * Callback that signals the video decoder input buffer queue has space again.
+     *
+     * Fired exactly once per back-pressure episode: when the internal queue transitions
+     * from full to has-space after `IVideoDecoderController.decodeBuffer()` returned `false`.
+     * If the client continues to call `decodeBuffer()` during back-pressure (receiving
+     * `false` repeatedly), only one callback is delivered per transition, regardless of
+     * the number of intermediate `false` returns.
+     *
+     * The client SHOULD wait for this callback before retrying `decodeBuffer()` to avoid
+     * wasted binder transactions. Continuing to call `decodeBuffer()` while the queue is
+     * full is permitted but will return `false` repeatedly until space is available.
+     *
+     * Not fired in steady-state operation - only after a refused buffer.
+     *
+     * @see IVideoDecoderController.decodeBuffer()
+     */
+    void onDecodeBufferAvailable();
+
+}

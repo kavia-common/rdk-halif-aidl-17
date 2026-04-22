@@ -19,7 +19,7 @@
 package com.rdk.hal.audiodecoder;
 import com.rdk.hal.audiodecoder.FrameMetadata;
 
-/** 
+/**
  *  @brief     Callbacks listener interface from audio decoder controller.
  *  @author    Luc Kennedy-Lamb
  *  @author    Peter Stieglitz
@@ -30,18 +30,43 @@ import com.rdk.hal.audiodecoder.FrameMetadata;
 oneway interface IAudioDecoderControllerListener {
     /**
     * Called when an audio frame has been decoded or when frame metadata needs notification.
-    * 
-    * In tunneled mode, audio data is consumed by the vendor layer, so no PCM buffer is returned.
-    * 
-    * Otherwise, {@code frameBufferHandle} is a valid handle to a decoded PCM buffer,
-    * and {@code metadata} is non-null for the first frame after {@code State::START} or {@code State::FLUSHING},
+    *
+    * In tunnelled mode, audio data is consumed by the vendor layer, so no PCM buffer is returned.
+    *
+    * Otherwise, `frameAVBufferHandle` is a valid AVBuffer handle to a decoded PCM buffer,
+    * and `metadata` is non-null for the first frame after `State::START` or `State::FLUSHING`,
     * or whenever stream metadata changes. Metadata may be null if unchanged since the last callback.
     *
-    * @param[in] nsPresentationTime  The presentation timestamp in nanoseconds.
-    * @param[in] frameBufferHandle   Handle to the decoded audio frame buffer, or -1 in tunneled mode.
-    * @param[in] metadata            FrameMetadata for the audio frame, or null in tunneled mode or if unchanged.
+    * Ownership semantics for `frameAVBufferHandle`:
+    * - The client receives ownership of the AVBuffer handle when this callback is invoked.
+    * - The client is responsible for managing the handle's lifecycle: either passing it to the next
+    *   module (e.g., audio sink) or explicitly freeing it via IAVBuffer.free() when no longer needed.
     *
-    * @see IAudioDecoderController.decodeBuffer()
+    * @param[in] nsPresentationTime    The presentation timestamp in nanoseconds.
+    * @param[in] frameAVBufferHandle   AVBuffer handle to the decoded audio frame buffer. Valid handle in
+    *                                   non-tunnelled mode; -1 in tunnelled mode.
+    * @param[in] metadata              FrameMetadata for the audio frame, or null in tunnelled mode or if unchanged.
+    *
+    * @see IAudioDecoderController.decodeBuffer(), IAVBuffer.free()
     */
-    void onFrameOutput(in long nsPresentationTime, in long frameBufferHandle, in @nullable FrameMetadata metadata);
+    void onFrameOutput(in long nsPresentationTime, in long frameAVBufferHandle, in @nullable FrameMetadata metadata);
+
+    /**
+     * Callback that signals the audio decoder input buffer queue has space again.
+     *
+     * Fired exactly once per back-pressure episode: when the internal queue transitions
+     * from full to has-space after `IAudioDecoderController.decodeBuffer()` returned `false`.
+     * If the client continues to call `decodeBuffer()` during back-pressure (receiving
+     * `false` repeatedly), only one callback is delivered per transition, regardless of
+     * the number of intermediate `false` returns.
+     *
+     * The client SHOULD wait for this callback before retrying `decodeBuffer()` to avoid
+     * wasted binder transactions. Continuing to call `decodeBuffer()` while the queue is
+     * full is permitted but will return `false` repeatedly until space is available.
+     *
+     * Not fired in steady-state operation - only after a refused buffer.
+     *
+     * @see IAudioDecoderController.decodeBuffer()
+     */
+    void onDecodeBufferAvailable();
 }

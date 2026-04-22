@@ -276,7 +276,7 @@ The Audio Decoder makes its own run-time choice about whether audio is tunnelled
 
 Tunnelled audio is required when any audio output ports are in passthrough mode. Tunnelled audio may also be required for some audio codecs that need a vendor integrated decoder/mixer such as Dolby MS12.
 
-When only tunnelled audio is in operation, no audio frame pool buffer handles containing decoded PCM audio are handed back to the controller client and the invalid `frameBufferHandle` value -1 is passed in `onFrameOutput()` callbacks.
+When only tunnelled audio is in operation, no audio frame pool buffer handles containing decoded PCM audio are handed back to the controller client and the `frameBufferHandle` value -1 is passed in `onFrameOutput()` callbacks to indicate tunnelled mode.
 
 ## Frame Metadata
 
@@ -324,7 +324,7 @@ Decoded audio frame buffers are only passed from the audio decoder to the client
 
 If the input [AV Buffer](../../av_buffer/current/av_buffer.md) that contained the coded audio frame was passed in a secure buffer, then the corresponding decoded audio frame must be output in a secure audio frame buffer.
 
-Audio frame buffers are passed back as handles in the `IAudioDecoderControllerListener.onFrameOutput()` function `frameBufferHandle` parameter. If no frame buffer handle is available to pass but the call needs to be made to provide updated `FrameMetadata` then -1 shall be passed as the handle value.
+Audio frame buffers are passed back as handles in the `IAudioDecoderControllerListener.onFrameOutput()` function `frameBufferHandle` parameter. In tunnelled mode, -1 is passed as the handle value to indicate that no frame buffer handle is being provided since the audio is consumed internally by the vendor layer.
 
 The format of the data in the decoded audio frame buffer is always PCM and described by the `FrameMetadata`.
 
@@ -333,6 +333,14 @@ The frame buffer handle is later passed to the Audio Sink for queuing before pre
 The vendor layer is expected to manage the pool of decoded audio buffers privately.
 
 If the frame buffer pool is empty then the audio decoder cannot output the next decoded frame until a new frame buffer becomes available. While frame output is blocked, it is reasonable for the audio decoder service to either buffer additional coded input buffers or to reject new calls to `decodeBuffer()` with a `false` return value.
+
+## Input Buffer Back-Pressure
+
+`IAudioDecoderController.decodeBuffer()` returns `false` when the internal decode buffer queue is full. Buffer ownership remains with the caller and the buffer must be retained for re-submission.
+
+To avoid wasted binder transactions, the client SHOULD wait for `IAudioDecoderControllerListener.onDecodeBufferAvailable()` before calling `decodeBuffer()` again. The callback fires exactly once per back-pressure episode: when the internal queue transitions from full to has-space. If the client continues to call `decodeBuffer()` during back-pressure (receiving `false` repeatedly), only one callback is delivered per transition. It is not fired in steady-state operation.
+
+Continuing to call `decodeBuffer()` while the queue is full is permitted but will return `false` repeatedly until space is available.
 
 ## Presentation Time for Audio Frames
 
