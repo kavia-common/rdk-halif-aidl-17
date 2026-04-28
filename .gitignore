@@ -38,3 +38,4 @@ Makefile
 # Generated presentations
 *.pdf
 !docs/presentations/**/*.pdf
+.file_activity_report.json
